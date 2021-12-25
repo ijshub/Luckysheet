@@ -155,9 +155,9 @@ export function createToolbarHtml() {
                 <div class="luckysheet-toolbar-button-inner-box luckysheet-inline-block"
                 style="user-select: none;">
                     <div class="luckysheet-icon luckysheet-inline-block " style="user-select: none;">
-                        <div aria-hidden="true" class="luckysheet-icon-img-container luckysheet-icon-img iconfont luckysheet-iconfont-jine"
+                        <i aria-hidden="true" class="fa fa-euro"
                         style="user-select: none;">
-                        </div>
+                        </i>
                     </div>
                 </div>
             </div>

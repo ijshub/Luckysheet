@@ -104,7 +104,7 @@ const menuButton = {
         else{
             Store.luckysheetfile[getSheetIndex(Store.luckysheet_copy_save["dataSheetIndex"])].luckysheet_selection_range = [];
         }
-        
+
         Store.luckysheet_copy_save = {};
 
         _this.luckysheetPaintModelOn = false;
@@ -167,7 +167,7 @@ const menuButton = {
 
                 for(let c = Store.luckysheet_select_save[0].column[0]; c <= Store.luckysheet_select_save[0].column[1]; c++){
                     let cell = Store.flowdata[r][c];
-                    
+
                     if(getObjType(cell) == "object" && ("mc" in cell) && cell.mc.rs != null){
                         HasMC = true;
                     }
@@ -191,7 +191,7 @@ const menuButton = {
                     alert(locale_paint.tipSelectRange);
                 }
                 else{
-                    tooltip.info("",locale_paint.tipSelectRange);  
+                    tooltip.info("",locale_paint.tipSelectRange);
                 }
                 return;
             }
@@ -225,14 +225,14 @@ const menuButton = {
 
                 for(let c = Store.luckysheet_select_save[0].column[0]; c <= Store.luckysheet_select_save[0].column[1]; c++){
                     let cell = Store.flowdata[r][c];
-                    
+
                     if(getObjType(cell) == "object" && ("mc" in cell) && cell.mc.rs != null){
                         HasMC = true;
                     }
                 }
             }
             Store.luckysheet_copy_save = { "dataSheetIndex": Store.currentSheetIndex, "copyRange": [{ "row": Store.luckysheet_select_save[0].row, "column": Store.luckysheet_select_save[0].column }], "RowlChange": RowlChange, "HasMC": HasMC };
-            
+
             _this.luckysheetPaintModelOn = true;
             _this.luckysheetPaintSingle = false;
         });
@@ -241,7 +241,7 @@ const menuButton = {
         $("#luckysheet-icon-currency").click(function(){
             let d = editor.deepCopyFlowData(Store.flowdata);//取数据
 
-            _this.updateFormat(d, "ct", "¥ #.00");
+            _this.updateFormat(d, "ct", "€ #,##0.00");
         });
 
         //百分比
@@ -254,7 +254,7 @@ const menuButton = {
         //减少小数位数
         $("#luckysheet-icon-fmt-decimal-decrease").click(function(){
             let d = editor.deepCopyFlowData(Store.flowdata);//取数据
-            let row_index = Store.luckysheet_select_save[0]["row_focus"], 
+            let row_index = Store.luckysheet_select_save[0]["row_focus"],
                 col_index = Store.luckysheet_select_save[0]["column_focus"];
             let foucsStatus = _this.checkstatus(d, row_index, col_index, "ct");
             let cell = d[row_index][col_index];
@@ -276,7 +276,7 @@ const menuButton = {
                         _this.updateFormat(d, "ct", foucsStatus.fa.split(".")[0]);
                     }
                     else{
-                        _this.updateFormat(d, "ct", foucsStatus.fa.substr(0, foucsStatus.fa.length - 1));   
+                        _this.updateFormat(d, "ct", foucsStatus.fa.substr(0, foucsStatus.fa.length - 1));
                     }
                 }
                 else{
@@ -331,7 +331,7 @@ const menuButton = {
         //增加小数位数
         $("#luckysheet-icon-fmt-decimal-increase").click(function(){
             let d = editor.deepCopyFlowData(Store.flowdata);//取数据
-            let row_index = Store.luckysheet_select_save[0]["row_focus"], 
+            let row_index = Store.luckysheet_select_save[0]["row_focus"],
                 col_index = Store.luckysheet_select_save[0]["column_focus"];
             let foucsStatus = _this.checkstatus(d, row_index, col_index, "ct");
             let cell = d[row_index][col_index];
@@ -370,7 +370,7 @@ const menuButton = {
 
             //Uncaught ReferenceError: Cannot access 'fa' before initialization
             let prefix = "", main = "", fa = [];
-            
+
             if(foucsStatus.fa.indexOf(".")>-1){
                 fa = foucsStatus.fa.split(".");
                 prefix = fa[0];
@@ -424,7 +424,7 @@ const menuButton = {
 
             let menuButtonId = $(this).attr("id")+"-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 let itemdata = locale_defaultFmt;
 
@@ -440,7 +440,7 @@ const menuButton = {
                 ];
                 let subitemset = _this.createButtonMenu(subitemdata);
                 let submenu = replaceHtml(_this.menu, {"id": "fmtOtherSelf", "item": subitemset, "subclass": "luckysheet-menuButton-sub"});
-                
+
                 //luckysheet-icon-fmt-other-menuButton_sub
                 $("body").append(menu+submenu);
                 $menuButton = $("#" + menuButtonId).width(250);
@@ -642,7 +642,7 @@ const menuButton = {
                     $("#luckysheet-icon-text-color").attr("color", null);
                     $input.spectrum("set", "#000000");
                     $("#luckysheet-icon-text-color .luckysheet-color-menu-button-indicator").css("border-bottom-color", "#000000");
-                    
+
                     let d = editor.deepCopyFlowData(Store.flowdata);
                     _this.updateFormat(d, "fc", null);
                 });
@@ -667,7 +667,7 @@ const menuButton = {
                     let isExists = alternateformat.rangeIsExists(range)[0];
                     if(!isExists){
                         alternateformat.modelfocusIndex = 0;
-                        alternateformat.new(range);    
+                        alternateformat.new(range);
                     }
 
                     alternateformat.init();
@@ -704,7 +704,7 @@ const menuButton = {
         $("#luckysheet-icon-cell-color-menu").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 let subid = "cell-color-self";
 
@@ -715,7 +715,7 @@ const menuButton = {
 
                 let coloritem = replaceHtml(_this.coloritem, { "class": "luckysheet-icon-alternateformat", "name": locale_toolbar.alternatingColors+"..." });
                 let menu = replaceHtml(_this.color, { "id": menuButtonId, "coloritem": coloritem, "colorself": subid, "sub": "","resetColor":locale_toolbar.resetColor });
-                
+
                 $("body").append(menu);
                 $menuButton = $("#" + menuButtonId);
 
@@ -763,7 +763,7 @@ const menuButton = {
                         // $("#luckysheet-icon-cell-color .luckysheet-color-menu-button-indicator").css("border-bottom-color", color);
                         // 下边框换成了一个DIV
                         $("#luckysheet-icon-cell-color .text-color-bar").css("background-color", color);
-                        
+
                         $("#luckysheet-icon-cell-color").attr("color", color);
                         let d = editor.deepCopyFlowData(Store.flowdata);
                         _this.updateFormat(d, "bg", color);
@@ -782,7 +782,7 @@ const menuButton = {
                     $("#luckysheet-icon-cell-color").attr("color", null);
                     $input.spectrum("set", "#ffffff");
                     $("#luckysheet-icon-cell-color .luckysheet-color-menu-button-indicator").css("border-bottom-color", "#ffffff");
-                    
+
                     let d = editor.deepCopyFlowData(Store.flowdata);
                     _this.updateFormat(d, "bg", null);
                 });
@@ -812,7 +812,7 @@ const menuButton = {
                     let isExists = alternateformat.rangeIsExists(range)[0];
                     if(!isExists){
                         alternateformat.modelfocusIndex = 0;
-                        alternateformat.new(range);    
+                        alternateformat.new(range);
                     }
 
                     alternateformat.init();
@@ -856,7 +856,7 @@ const menuButton = {
         }).click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 let itemdata = [
                     { "text": "9", "value": "9", "example": "" },
@@ -895,7 +895,7 @@ const menuButton = {
 
                     let d = editor.deepCopyFlowData(Store.flowdata);
                     _this.updateFormat(d, "fs", itemvalue);
-                    
+
                     clearTimeout(luckysheet_fs_setTimeout);
                 });
             }
@@ -930,10 +930,10 @@ const menuButton = {
             let itemvalue = parseInt($this.val());
             let $menuButton = $("#luckysheet-icon-font-size-menuButton");
             _this.focus($menuButton, itemvalue);
-            
+
             let d = editor.deepCopyFlowData(Store.flowdata);
             _this.updateFormat(d, "fs", itemvalue);
-            
+
             luckysheet_fs_setTimeout = setTimeout(function(){
                 $menuButton.hide();
                 $this.blur();
@@ -994,7 +994,7 @@ const menuButton = {
 
                 redo["config"] = $.extend(true, {}, Store.config);
                 redo["curconfig"] = $.extend(true, {}, cfg);
-                
+
                 redo["sheetIndex"] = Store.currentSheetIndex;
 
                 Store.jfredo.push(redo);
@@ -1079,7 +1079,7 @@ const menuButton = {
                     canvasborder.translate(0.5, 0.5);
 
                     _this.setLineDash(canvasborder, itemvalue, "h", 0, 5, 100, 5);
-                    
+
                     canvasborder.strokeStyle = "#000000";
                     canvasborder.stroke();
                     canvasborder.closePath();
@@ -1088,9 +1088,9 @@ const menuButton = {
                 $("#" + submenuid + " .luckysheet-cols-menuitem").click(function(){
                     $("#"+ submenuid).hide();
 
-                    let $t = $(this), 
+                    let $t = $(this),
                         itemvalue = $t.attr("itemvalue");
-                    
+
                     if(itemvalue == 0){
                         $("#luckysheetborderSizepreview").attr("src", "data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==").attr("itemvalue", null);
                     }
@@ -1098,10 +1098,10 @@ const menuButton = {
                         let bg = $t.find("canvas").get(0).toDataURL("image/png");
                         $("#luckysheetborderSizepreview").attr("src", bg).attr("itemvalue", itemvalue);
                     }
-                    
+
                     _this.focus($("#" + submenuid), itemvalue);
                 });
-                
+
                 // border choose menu
                 $menuButton.find(".luckysheet-cols-menuitem").click(function(){
                     // *如果禁止前台编辑，则中止下一步操作
@@ -1158,7 +1158,7 @@ const menuButton = {
 
                         redo["config"] = $.extend(true, {}, Store.config);
                         redo["curconfig"] = $.extend(true, {}, cfg);
-                        
+
                         redo["sheetIndex"] = Store.currentSheetIndex;
 
                         Store.jfredo.push(redo);
@@ -1268,9 +1268,9 @@ const menuButton = {
                 let has_PartMC = false;
 
                 for(let s = 0; s < Store.luckysheet_select_save.length; s++){
-                    let r1 = Store.luckysheet_select_save[s].row[0], 
+                    let r1 = Store.luckysheet_select_save[s].row[0],
                         r2 = Store.luckysheet_select_save[s].row[1];
-                    let c1 = Store.luckysheet_select_save[s].column[0], 
+                    let c1 = Store.luckysheet_select_save[s].column[0],
                         c2 = Store.luckysheet_select_save[s].column[1];
 
                     has_PartMC = hasPartMC(Store.config, r1, r2, c1, c2);
@@ -1285,9 +1285,9 @@ const menuButton = {
                         alert("无法对部分合并单元格执行此操作");
                     }
                     else{
-                        tooltip.info("无法对部分合并单元格执行此操作", ""); 
+                        tooltip.info("无法对部分合并单元格执行此操作", "");
                     }
-                    return;    
+                    return;
                 }
             }
 
@@ -1298,7 +1298,7 @@ const menuButton = {
         $("#luckysheet-icon-merge-menu").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 const _locale = locale();
                 const locale_merge =  _locale.merge;
@@ -1336,9 +1336,9 @@ const menuButton = {
                         let has_PartMC = false;
 
                         for(let s = 0; s < Store.luckysheet_select_save.length; s++){
-                            let r1 = Store.luckysheet_select_save[s].row[0], 
+                            let r1 = Store.luckysheet_select_save[s].row[0],
                                 r2 = Store.luckysheet_select_save[s].row[1];
-                            let c1 = Store.luckysheet_select_save[s].column[0], 
+                            let c1 = Store.luckysheet_select_save[s].column[0],
                                 c2 = Store.luckysheet_select_save[s].column[1];
 
                             has_PartMC = hasPartMC(Store.config, r1, r2, c1, c2);
@@ -1353,9 +1353,9 @@ const menuButton = {
                                 alert(locale_merge.partiallyError);
                             }
                             else{
-                                tooltip.info(locale_merge.partiallyError, ""); 
+                                tooltip.info(locale_merge.partiallyError, "");
                             }
-                            return;    
+                            return;
                         }
                     }
 
@@ -1391,7 +1391,7 @@ const menuButton = {
         $("#luckysheet-icon-align-menu").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 const _locale = locale();
                 const locale_align = _locale.align;
@@ -1504,7 +1504,7 @@ const menuButton = {
         $("#luckysheet-icon-textwrap-menu").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 const _locale = locale();
                 const locale_textWrap = _locale.textWrap;
@@ -1556,7 +1556,7 @@ const menuButton = {
         $("#luckysheet-icon-rotation-menu").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 const _locale = locale();
                 const locale_rotation = _locale.rotation;
@@ -1593,7 +1593,7 @@ const menuButton = {
 
                     // add iconfont
                     $icon.removeAttr("class").addClass("luckysheet-icon-img-container luckysheet-icon-img luckysheet-icon-rotation-" + itemvalue + iconfontObject[itemvalue]);
-                    
+
                     let d = editor.deepCopyFlowData(Store.flowdata);
                     _this.updateFormat(d, "tr", itemvalue);
                 });
@@ -1613,7 +1613,7 @@ const menuButton = {
         $("#luckysheet-icon-freezen-menu").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 const _locale = locale();
                 const locale_freezen = _locale.freezen;
@@ -1758,7 +1758,7 @@ const menuButton = {
                         if(row_focus > row_st){
                             row_st = row_focus;
                         }
-                        
+
                         if(row_st == -1){
                             row_st = 0;
                         }
@@ -1849,7 +1849,7 @@ const menuButton = {
                         if (luckysheetFreezen.freezenRealFirstRowColumn && (rangeTop > $("#luckysheet-cell-main").height() || rangeLeft > $("#luckysheet-cell-main").width())) {
                             return  tooltip.info(locale_freezen.rangeRCOverErrorTitle, locale_freezen.rangeRCOverError);
                         }
-                        
+
                         let scrollTop = $("#luckysheet-cell-main").scrollTop();
                         let row_st = luckysheet_searcharray(Store.visibledatarow, scrollTop);
 
@@ -1859,7 +1859,7 @@ const menuButton = {
                         if(row_focus > row_st){
                             row_st = row_focus;
                         }
-                        
+
                         if(row_st == -1){
                             row_st = 0;
                         }
@@ -1899,7 +1899,7 @@ const menuButton = {
                         luckysheetFreezen.saveFreezen(null, null, freezenverticaldata, left);
 
                         luckysheetFreezen.createFreezenVertical(freezenverticaldata, left);
-                        
+
                         luckysheetFreezen.createAssistCanvas();
                         luckysheetrefreshgrid();
                     }
@@ -1939,7 +1939,7 @@ const menuButton = {
         $("#luckysheet-icon-autofilter").click(function(){
             let menuButtonId = $(this).attr("id") + "-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             if($menuButton.length == 0){
                 const _locale = locale();
                 const locale_sort = _locale.sort;
@@ -2040,9 +2040,9 @@ const menuButton = {
                             luckysheetSearchReplace.createDialog(0);
                         }
                         else if(itemvalue == "replace"){
-                            luckysheetSearchReplace.createDialog(1);    
+                            luckysheetSearchReplace.createDialog(1);
                         }
-                        
+
                         luckysheetSearchReplace.init();
 
                         $("#luckysheet-search-replace #searchInput input").focus();
@@ -2051,9 +2051,9 @@ const menuButton = {
                         luckysheetLocationCell.createDialog();
                         luckysheetLocationCell.init();
                     }
-                    else if(itemvalue == "locationFormula" || itemvalue == "locationConstantDate" || itemvalue == "locationConstantNumber" || itemvalue == "locationConstantString" || itemvalue == "locationConstantError" || itemvalue == "locationCF"){ 
+                    else if(itemvalue == "locationFormula" || itemvalue == "locationConstantDate" || itemvalue == "locationConstantNumber" || itemvalue == "locationConstantString" || itemvalue == "locationConstantError" || itemvalue == "locationCF"){
                         let last = Store.luckysheet_select_save[0];
-                        
+
                         let range;
                         if(Store.luckysheet_select_save.length == 0 || (Store.luckysheet_select_save.length == 1 && last.row[0] == last.row[1] && last.column[0] == last.column[1])){
                             //单个单元格
@@ -2088,9 +2088,9 @@ const menuButton = {
                                 alert(locale_findAndReplace.lessTwoRowTip);
                             }
                             else{
-                                tooltip.info("", locale_findAndReplace.lessTwoRowTip); 
+                                tooltip.info("", locale_findAndReplace.lessTwoRowTip);
                             }
-                            return;                            
+                            return;
                         }
 
                         let range = $.extend(true, [], Store.luckysheet_select_save);
@@ -2103,9 +2103,9 @@ const menuButton = {
                                 alert(locale_findAndReplace.lessTwoColumnTip);
                             }
                             else{
-                                tooltip.info("", locale_findAndReplace.lessTwoColumnTip); 
+                                tooltip.info("", locale_findAndReplace.lessTwoColumnTip);
                             }
-                            return;                            
+                            return;
                         }
 
                         let range = $.extend(true, [], Store.luckysheet_select_save);
@@ -2137,7 +2137,7 @@ const menuButton = {
 
             const _locale = locale();
             const locale_formula = _locale.formula;
-            
+
             if($menuButton.length == 0){
                 let itemdata = [
                     {"text": locale_formula.sum, "value": "SUM", "example": 'SUM'},
@@ -2208,7 +2208,7 @@ const menuButton = {
                         let row_index = last["row_focus"], col_index = last["column_focus"];
 
                         luckysheetupdateCell(row_index, col_index, Store.flowdata);
-                        
+
                         let cell = Store.flowdata[row_index][col_index];
                         if(cell != null && cell.f != null){
                             //单元格有计算
@@ -2253,7 +2253,7 @@ const menuButton = {
             e.stopPropagation();
         }).click(function(e){
             let d = editor.deepCopyFlowData(Store.flowdata);
-            
+
             let flag = checkTheStatusOfTheSelectedCells("bl",1);
             let foucsStatus = flag ? 0 : 1;
 
@@ -2303,7 +2303,7 @@ const menuButton = {
             let $menuButton = $("#" + menuButtonId);
 
             const conditionformat_text = locale().conditionformat;
-            
+
             if($menuButton.length == 0){
                 let itemdata = [
                     { "text": conditionformat_text.highlightCellRules, "value": "highlightCellRule", "example": "more" },
@@ -2318,7 +2318,7 @@ const menuButton = {
                 ];
                 let itemset = _this.createButtonMenu(itemdata);
                 let menu = replaceHtml(_this.menu, {"id": "conditionformat", "item": itemset, "subclass": "", "sub": ""});
-                
+
                 //突出显示单元格规则子菜单
                 let subitemdata = [
                     { "text": conditionformat_text.greaterThan, "value": "greaterThan", "example": ">" },
@@ -2331,7 +2331,7 @@ const menuButton = {
                 ];
                 let subitemset = _this.createButtonMenu(subitemdata);
                 let submenu = replaceHtml(_this.menu, {"id": "highlightCellRule", "item": subitemset, "subclass": "luckysheet-menuButton-sub"});
-                
+
                 //项目选取规则子菜单
                 let subitemdata2 = [
                     { "text": conditionformat_text.top10, "value": "top10", "example": conditionformat_text.top10 },
@@ -2343,7 +2343,7 @@ const menuButton = {
                 ];
                 let subitemset2 = _this.createButtonMenu(subitemdata2);
                 let submenu2 = replaceHtml(_this.menu, {"id": "projectSelectRule", "item": subitemset2, "subclass": "luckysheet-menuButton-sub"});
-                
+
                 //数据条子菜单
                 let submenu3 = `<div id="luckysheet-icon-dataBar-menuButton" class="luckysheet-cols-menu luckysheet-rightgclick-menu luckysheet-menuButton luckysheet-menuButton-sub luckysheet-mousedown-cancel" style="width: 126px;padding: 5px;top: 118.5px;left: 1321.48px;display: none;">
                                     <div itemvalue="0" class="luckysheet-cols-menuitem luckysheet-mousedown-cancel" style="width: 28px; height: 26px;padding: 5px;float: left;">
@@ -2526,7 +2526,7 @@ const menuButton = {
                             alert(conditionformat_text.pleaseSelectRange);
                         }
                         else{
-                            tooltip.info(conditionformat_text.pleaseSelectRange, ""); 
+                            tooltip.info(conditionformat_text.pleaseSelectRange, "");
                         }
                         return;
                     }
@@ -2601,7 +2601,7 @@ const menuButton = {
                                                 <div style="margin: 5px 0;">${conditionformat_text.setAs}：</div>
                                                 ${textCellColorHtml}
                                             </div>`;
-                                break; 
+                                break;
                             case "occurrenceDate":
                                 title = conditionformat_text.conditionformat_occurrenceDate;
                                 content =  `<div class="box" data-itemvalue="occurrenceDate">
@@ -2612,7 +2612,7 @@ const menuButton = {
                                                 <div style="margin: 5px 0;">${conditionformat_text.setAs}：</div>
                                                 ${textCellColorHtml}
                                             </div>`;
-                                break; 
+                                break;
                             case "duplicateValue":
                                 title = conditionformat_text.conditionformat_duplicateValue;
                                 content =  `<div class="box" data-itemvalue="duplicateValue">
@@ -2624,10 +2624,10 @@ const menuButton = {
                                                 <div style="margin:5px 0;">${conditionformat_text.setAs}：</div>
                                                 ${textCellColorHtml}
                                             </div>`;
-                                break;      
+                                break;
                         }
 
-                        conditionformat.conditionformatDialog(title, content); 
+                        conditionformat.conditionformatDialog(title, content);
                     }
                 });
 
@@ -2644,7 +2644,7 @@ const menuButton = {
                             alert(conditionformat_text.pleaseSelectRange);
                         }
                         else{
-                            tooltip.info(conditionformat_text.pleaseSelectRange, ""); 
+                            tooltip.info(conditionformat_text.pleaseSelectRange, "");
                         }
                         return;
                     }
@@ -2720,7 +2720,7 @@ const menuButton = {
                                                 <div style="margin: 5px 0;">${conditionformat_text.setAsByArea}：</div>
                                                 ${textCellColorHtml}
                                             </div>`;
-                                break; 
+                                break;
                             case "SubAverage":
                                 title = conditionformat_text.conditionformat_SubAverage;
                                 content =  `<div class="box" data-itemvalue="SubAverage">
@@ -2728,7 +2728,7 @@ const menuButton = {
                                                 <div style="margin: 5px 0;">${conditionformat_text.setAsByArea}：</div>
                                                 ${textCellColorHtml}
                                             </div>`;
-                                break; 
+                                break;
                         }
 
                         conditionformat.conditionformatDialog(title,content);
@@ -2795,7 +2795,7 @@ const menuButton = {
         $("#luckysheet-icon-postil").click(function(){
             let menuButtonId = $(this).attr("id")+"-menuButton";
             let $menuButton = $("#" + menuButtonId);
-            
+
             const locale_comment = locale().comment;
 
             $menuButton.remove();
@@ -2804,7 +2804,7 @@ const menuButton = {
                 luckysheetPostil.removeActivePs();
 
                 let last = Store.luckysheet_select_save[Store.luckysheet_select_save.length - 1];
-                
+
                 let row_index = last["row_focus"];
                 if(row_index == null){
                     row_index = last["row"][0];
@@ -2832,10 +2832,10 @@ const menuButton = {
                         {"text": locale_comment.showAll, "value": "showHideAllPs", "example": ""}
                     ];
                 }
-                
+
                 let itemset = _this.createButtonMenu(itemdata);
                 let menu = replaceHtml(_this.menu, {"id": "postil", "item": itemset, "subclass": "", "sub": ""});
-                
+
                 $("body").append(menu);
                 $menuButton = $("#"+menuButtonId).width(150);
 
@@ -2844,7 +2844,7 @@ const menuButton = {
                     luckysheetContainerFocus();
 
                     let $t = $(this), itemvalue = $t.attr("itemvalue");
-                    
+
                     if(itemvalue == "newPs"){
                         luckysheetPostil.newPs(row_index, col_index);
                     }
@@ -2872,7 +2872,7 @@ const menuButton = {
             }
             mouseclickposition($menuButton, menuleft, $(this).offset().top + 25, "lefttop");
         });
-        
+
         //sheet protection
         $("#luckysheet-icon-protection").click(function(){
             let sheetFile = sheetmanage.getSheetByIndex();
@@ -2925,11 +2925,11 @@ const menuButton = {
             }
             mouseclickposition($menuButton, menuleft, $(this).offset().top + 25, "lefttop");
         });
-        
+
         $("body").on("mouseover mouseleave",".luckysheet-menuButton .luckysheet-cols-submenu", function(e){
-            let $t = $(this), attrid = $t.attr("itemvalue"), 
+            let $t = $(this), attrid = $t.attr("itemvalue"),
                 $attr = $("#luckysheet-icon-" + attrid + "-menuButton");
-            
+
             if (e.type === "mouseover") {
                 let $con = $t.parent();
                 let winW = $(window).width(), winH = $(window).height();
@@ -2955,7 +2955,7 @@ const menuButton = {
             if (e.type === "mouseover") {
                 _this.rightclickmenu.addClass("luckysheet-cols-menuitem-hover");
                 clearTimeout(_this.submenuhide[$(this).attr('id')]);
-            } 
+            }
             else {
                 _this.rightclickmenu.removeClass("luckysheet-cols-menuitem-hover");
                 $(this).hide();
@@ -2967,7 +2967,7 @@ const menuButton = {
 
         if(width.indexOf("pt") > -1){
             width = parseFloat(width);
-            
+
             if(width < 1){
 
             }
@@ -2980,7 +2980,7 @@ const menuButton = {
         }
         else{
             width = parseFloat(width);
-            
+
             if(width < 2){
 
             }
@@ -3025,7 +3025,7 @@ const menuButton = {
                 style = 1;
             }
         }
-        
+
         return [style, color];
     },
     updateFormatCell:function(d, attr, foucsStatus,row_st, row_ed, col_st, col_ed){
@@ -3040,7 +3040,7 @@ const menuButton = {
 
                 for (let c = col_st; c <= col_ed; c++) {
                     let cell = d[r][c], value = null;
-                    
+
                     if (getObjType(cell) == "object") {
                         value = d[r][c]["v"];
                     }
@@ -3054,7 +3054,7 @@ const menuButton = {
 
                     let mask = update(foucsStatus, value);
                     let type = "n";
-                    
+
                     if(is_date(foucsStatus) || foucsStatus === 14 || foucsStatus === 15 || foucsStatus === 16 || foucsStatus === 17 || foucsStatus === 18 || foucsStatus === 19 || foucsStatus === 20 || foucsStatus === 21 || foucsStatus === 22 || foucsStatus === 45 || foucsStatus === 46 || foucsStatus === 47){
                         type = "d";
                     }
@@ -3062,7 +3062,7 @@ const menuButton = {
                         type = "s"
                     }
                     else if(foucsStatus == "General" || foucsStatus === 0){
-                        // type = "g"; 
+                        // type = "g";
                         type = isRealNum(value) ? "n" : "g";
                     }
 
@@ -3142,7 +3142,7 @@ const menuButton = {
 
                 for (let c = col_st; c <= col_ed; c++) {
                     let value = d[r][c];
-                    
+
                     if (getObjType(value) == "object") {
                         // if(attr in inlineStyleAffectAttribute && isInlineStringCell(value)){
                             updateInlineStringFormatOutside(value, attr, foucsStatus);
@@ -3150,7 +3150,7 @@ const menuButton = {
                         // else{
                             d[r][c][attr] = foucsStatus;
                         // }
-                        
+
                     }
                     else{
                         d[r][c] = { v: value };
@@ -3198,9 +3198,9 @@ const menuButton = {
         }
 
         for(let s = 0; s < Store.luckysheet_select_save.length; s++){
-            let row_st = Store.luckysheet_select_save[s]["row"][0], 
+            let row_st = Store.luckysheet_select_save[s]["row"][0],
                 row_ed = Store.luckysheet_select_save[s]["row"][1];
-            let col_st = Store.luckysheet_select_save[s]["column"][0], 
+            let col_st = Store.luckysheet_select_save[s]["column"][0],
                 col_ed = Store.luckysheet_select_save[s]["column"][1];
 
             this.updateFormatCell(d, attr, foucsStatus, row_st, row_ed, col_st, col_ed);
@@ -3438,7 +3438,7 @@ const menuButton = {
 
         let cell = d[r][c];
         let bg = null;
-        
+
         if(cell == null){
             return [-1, 0, 0, -1];
         }
@@ -3514,7 +3514,7 @@ const menuButton = {
                     itemname = foucsStatus;
 
                     _this.addFontTolist(itemvalue);
-                }   
+                }
             }
 
             _this.focus($menuButton, itemvalue);
@@ -3530,7 +3530,7 @@ const menuButton = {
         else if(attr == "ht"){
             let $menuButton = $("#luckysheet-icon-align-menu-menuButton");
             let $t = $("luckysheet-icon-align"), itemvalue = "left";
-            
+
             if(foucsStatus == "0"){
                 itemvalue = "center";
             }
@@ -3550,7 +3550,7 @@ const menuButton = {
         else if(attr == "vt"){
             let $menuButton = $("#luckysheet-icon-valign-menu-menuButton");
             let $t = $("luckysheet-icon-valign"), itemvalue = "bottom";
-            
+
             if(foucsStatus == "1"){
                 itemvalue = "top";
             }
@@ -3570,7 +3570,7 @@ const menuButton = {
         else if(attr == "tb"){
             let $menuButton = $("#luckysheet-icon-textwrap-menu-menuButton");
             let $t = $("luckysheet-icon-textwrap"), itemvalue = "clip";
-            
+
             if(foucsStatus == "1"){
                 itemvalue = "overflow";
             }
@@ -3590,7 +3590,7 @@ const menuButton = {
         else if(attr == "tr"){
             let $menuButton = $("#luckysheet-icon-rotation-menu-menuButton");
             let $t = $("luckysheet-icon-rotation"), itemvalue = "none";
-            
+
             if(foucsStatus == "1"){
                 itemvalue = "angleup";
             }
@@ -3635,7 +3635,7 @@ const menuButton = {
         }
     },
     inputMenuButtonFocus:function(focusTarget){
-        var  w = window.getSelection(); 
+        var  w = window.getSelection();
         var range = w.getRangeAt(0);
         let startContainer = range.startContainer;
         Store.inlineStringEditRange = null;
@@ -3669,19 +3669,19 @@ const menuButton = {
     },
     setLineDash: function(canvasborder, type, hv, m_st, m_ed, line_st, line_ed){
     	let borderType = {
-            "0": "none", 
-            "1": "Thin", 
-            "2": "Hair", 
-            "3": "Dotted", 
-            "4": "Dashed", 
-            "5": "DashDot", 
-            "6": "DashDotDot", 
-            "7": "Double", 
-            "8": "Medium", 
-            "9": "MediumDashed", 
-            "10": "MediumDashDot", 
-            "11": "MediumDashDotDot", 
-            "12": "SlantedDashDot", 
+            "0": "none",
+            "1": "Thin",
+            "2": "Hair",
+            "3": "Dotted",
+            "4": "Dashed",
+            "5": "DashDot",
+            "6": "DashDotDot",
+            "7": "Double",
+            "8": "Medium",
+            "9": "MediumDashed",
+            "10": "MediumDashDot",
+            "11": "MediumDashDotDot",
+            "12": "SlantedDashDot",
             "13": "Thick"
         };
 
@@ -3706,7 +3706,7 @@ const menuButton = {
             else{
             	canvasborder.setLineDash([0]);
             }
-        } 
+        }
         catch(e) {
     		console.log(e);
     	}
@@ -3722,7 +3722,7 @@ const menuButton = {
         		canvasborder.moveTo(m_st - 0.5, m_ed);
             	canvasborder.lineTo(line_st - 0.5, line_ed);
         	}
-            
+
             canvasborder.lineWidth = 2;
         }
         else if(type == "Thick"){
@@ -3746,19 +3746,19 @@ const menuButton = {
         for(let r = 0; r < d.length; r++){
             for(let c = 0; c < d[0].length; c++){
                 let cell = d[r][c];
-                
+
                 if(getObjType(cell) == "object" && ("mc" in cell)){
                     if(cell.mc.rs != null){
-                        deleMC.push({ 
-                            rs: cell.mc.rs, 
-                            cs: cell.mc.cs, 
-                            r: cell.mc.r, 
+                        deleMC.push({
+                            rs: cell.mc.rs,
+                            cs: cell.mc.cs,
+                            r: cell.mc.r,
                             c: cell.mc.c
                         });
-                        insertMC.push({ 
-                            rs: cell.mc.rs, 
-                            cs: cell.mc.cs, 
-                            r: cell.mc.r + offset_r, 
+                        insertMC.push({
+                            rs: cell.mc.rs,
+                            cs: cell.mc.cs,
+                            r: cell.mc.r + offset_r,
                             c: cell.mc.c + offset_c
                         });
 
@@ -3802,7 +3802,7 @@ const menuButton = {
             return null;
         }
         let value = d[row_index][col_index];
-        
+
         if(getObjType(value) == "object" && ("mc" in value)){
             let margeMaindata = value["mc"];
             if(margeMaindata==null){
@@ -3821,7 +3821,7 @@ const menuButton = {
             let row_rs = d[row_index][col_index].mc.rs;
 
             let margeMain = d[row_index][col_index].mc;
-            
+
             let start_r, end_r, row, row_pre;
             for(let r = row_index; r < margeMain.rs + row_index; r++){
                 if (r == 0) {
@@ -3842,7 +3842,7 @@ const menuButton = {
                 }
             }
 
-            let start_c, end_c, col, col_pre; 
+            let start_c, end_c, col, col_pre;
             for(let c = col_index; c < margeMain.cs + col_index; c++){
                 if (c == 0) {
                     start_c = 0;
@@ -3863,7 +3863,7 @@ const menuButton = {
             }
 
             return {
-                "row": [row_pre , row, row_index, row_index + row_rs - 1], 
+                "row": [row_pre , row, row_index, row_index + row_rs - 1],
                 "column": [col_pre, col , col_index, col_index + col_rs - 1]
             };
         }
@@ -3875,7 +3875,7 @@ const menuButton = {
     mergeMoveMain: function(columnseleted, rowseleted, s, top , height, left , width){
         let _this = this;
         let mergesetting = sheetmanage.getSheetMerge();
-        
+
         if(mergesetting == null){
             return;
         }
@@ -3911,7 +3911,7 @@ const menuButton = {
 
                 if(changeparam != null){
                     _this.mergeMoveData[key] = mc;
-                    
+
                     columnseleted = changeparam[0];
                     rowseleted= changeparam[1];
                     top = changeparam[2];
@@ -3926,12 +3926,12 @@ const menuButton = {
                 }
             }
         }
-        
+
         return [columnseleted, rowseleted, top, height, left, width];
     },
     mergeMove: function(mc, columnseleted, rowseleted, s, top , height, left , width){
         let _this = this;
-        
+
         let row_st = mc.r, row_ed = mc.r + mc.rs - 1;
         let col_st = mc.c, col_ed = mc.c + mc.cs - 1;
         let ismatch = false;
@@ -3961,7 +3961,7 @@ const menuButton = {
                         top = row_pre;
                         rowseleted[0] = row_st;
                     }
-                    
+
                     //向下滑动或者居中时往上滑动的向下补齐
                     if(rowseleted[1] >= row_st && rowseleted[1] <= row_ed){
                         if(s.row_focus >= row_st && s.row_focus <= row_ed){
@@ -3970,18 +3970,18 @@ const menuButton = {
                         else{
                             height = row - top;
                         }
-                        
+
                         rowseleted[1] = row_ed;
                     }
                 }
-                
+
                 if(!(rowseleted[1] < row_st || rowseleted[0] > row_ed)){
                     if(columnseleted[0] <= col_ed && columnseleted[0] >= col_st){
                         width += left - col_pre;
                         left = col_pre;
                         columnseleted[0] = col_st;
                     }
-                    
+
                     //向右滑动或者居中时往左滑动的向下补齐
                     if(columnseleted[1] >= col_st && columnseleted[1] <= col_ed){
                         if(s.column_focus >= col_st && s.column_focus <= col_ed){
@@ -3990,7 +3990,7 @@ const menuButton = {
                         else{
                             width = col - left;
                         }
-                        
+
                         columnseleted[1] = col_ed;
                     }
                 }
@@ -3998,7 +3998,7 @@ const menuButton = {
                 ismatch = true;
             }
         }
-       
+
         if(ismatch){
             return [columnseleted, rowseleted, top , height, left , width];
         }
@@ -4026,7 +4026,7 @@ const menuButton = {
                 let col = margeset.column[1];
                 let col_pre = margeset.column[0];
                 let col_index = margeset.column[2];
-                let col_index_ed = margeset.column[3];                    
+                let col_index_ed = margeset.column[3];
 
                 width = col - col_pre - 1;
                 height = row - row_pre - 1;
@@ -4034,11 +4034,11 @@ const menuButton = {
         }
         else{
             let config = getluckysheetfile()[getSheetIndex(Store.currentSheetIndex)]["config"];
-            
+
             if (config["columnlen"] != null && config["columnlen"][cell_c] != null) {
                 width = config["columnlen"][cell_c];
             }
-            
+
             if (config["rowlen"] != null && config["rowlen"][cell_r] != null) {
                 height = config["rowlen"][cell_r];
             }
@@ -4050,7 +4050,7 @@ const menuButton = {
     getTextSize: function(text, font){
         let fontarray = locale().fontarray;
         let f = font || '10pt ' + fontarray[0];
-        
+
         let _this = this;
 
         if (f in _this.getTextHeightCache){
@@ -4062,11 +4062,11 @@ const menuButton = {
         }
 
         let o = $("#luckysheetTextSizeTest").text(text).css({'font': f}),
-            w = o.innerWidth(), 
+            w = o.innerWidth(),
             h = o.innerHeight();
 
         _this.getTextHeightCache[f] = [w, h];
-       
+
         return [w, h];
     },
     activeFormulaInput: function(row_index, col_index, rowh, columnh, formula, isnull){
@@ -4090,9 +4090,9 @@ const menuButton = {
             return;
         }
 
-        let row_pre = rowLocationByIndex(rowh[0])[0], 
-            row = rowLocationByIndex(rowh[1])[1], 
-            col_pre = colLocationByIndex(columnh[0])[0], 
+        let row_pre = rowLocationByIndex(rowh[0])[0],
+            row = rowLocationByIndex(rowh[1])[1],
+            col_pre = colLocationByIndex(columnh[0])[0],
             col = colLocationByIndex(columnh[1])[1];
 
         let formulaTxt = '<span dir="auto" class="luckysheet-formula-text-color">=</span><span dir="auto" class="luckysheet-formula-text-color">'+ formula.toUpperCase() +'</span><span dir="auto" class="luckysheet-formula-text-color">(</span><span class="luckysheet-formula-functionrange-cell" rangeindex="0" dir="auto" style="color:'+ luckyColor[0] +';">'+ getRangetxt(Store.currentSheetIndex, {"row":rowh, "column":columnh }, Store.currentSheetIndex) +'</span><span dir="auto" class="luckysheet-formula-text-color">)</span>';
@@ -4104,19 +4104,19 @@ const menuButton = {
         luckysheetformula.rangedrag_row_start = false;
         luckysheetformula.rangechangeindex = 0;
         luckysheetformula.rangeSetValue({ "row": rowh, "column": columnh });
-        luckysheetformula.func_selectedrange = { 
-            "left": col_pre, 
-            "width": col - col_pre - 1, 
-            "top": row_pre, 
-            "height": row - row_pre - 1, 
-            "left_move": col_pre, 
-            "width_move": col - col_pre - 1, 
-            "top_move": row_pre, 
-            "height_move": row - row_pre - 1, 
-            "row": [row_index, row_index], 
-            "column": [col_index, col_index] 
+        luckysheetformula.func_selectedrange = {
+            "left": col_pre,
+            "width": col - col_pre - 1,
+            "top": row_pre,
+            "height": row - row_pre - 1,
+            "left_move": col_pre,
+            "width_move": col - col_pre - 1,
+            "top_move": row_pre,
+            "height_move": row - row_pre - 1,
+            "row": [row_index, row_index],
+            "column": [col_index, col_index]
         };
-        
+
         $("#luckysheet-formula-functionrange-select").css({ "left": col_pre, "width": col - col_pre - 1, "top": row_pre, "height": row - row_pre - 1 }).show();
 
         $("#luckysheet-formula-help-c").hide();
@@ -4209,9 +4209,9 @@ const menuButton = {
         if(noNull == null){
             noNull = true;
         }
-        
+
         let isNull = true, isNum= false;
-        
+
         for(let c = st_m; c <= ed_m; c++){
             let cell = null;
 
@@ -4229,7 +4229,7 @@ const menuButton = {
             else if(_this.checkNoNullValueAll(cell)){
                 isNull = false;
             }
-        } 
+        }
 
         if(isNull && noNull){
             let st_r_r = _this.getNoNullValue(d, _index, fix, type);
@@ -4246,7 +4246,7 @@ const menuButton = {
                 if(_index == st_m){
                     for(let c = st_m; c <= ed_m; c++){
                         let st_r_r = _this.getNoNullValue(d, c, fix, type);
-                        
+
                         if(st_r_r == null){
                             break;
                         }
@@ -4262,7 +4262,7 @@ const menuButton = {
                 else{
                     for(let c = ed_m; c >= st_m; c--){
                         let st_r_r = _this.getNoNullValue(d, c, fix, type);
-                        
+
                         if(st_r_r == null){
                             break;
                         }
@@ -4299,10 +4299,10 @@ const menuButton = {
                 }
 
                 while ( cell != null && cell.v != null && cell.v.toString().length > 0) {
-                    
+
                     c++;
                     let len = null;
-                    
+
                     if(type == "c"){
                         len = d.length;
                     }
@@ -4313,7 +4313,7 @@ const menuButton = {
                     if(c >= len){
                         return;
                     }
-                    
+
                     if(type == "c"){
                         cell = d[c][fix];
                     }
@@ -4372,11 +4372,11 @@ const menuButton = {
         }
 
         for(let s = 0; s < Store.luckysheet_select_save.length; s++){
-            let st_r = Store.luckysheet_select_save[s].row[0], 
+            let st_r = Store.luckysheet_select_save[s].row[0],
                 ed_r = Store.luckysheet_select_save[s].row[1];
-            let st_c = Store.luckysheet_select_save[s].column[0], 
+            let st_c = Store.luckysheet_select_save[s].column[0],
                 ed_c = Store.luckysheet_select_save[s].column[1];
-            let row_index = Store.luckysheet_select_save[s].row_focus, 
+            let row_index = Store.luckysheet_select_save[s].row_focus,
                 col_index = Store.luckysheet_select_save[s].column_focus;
 
             if(st_r == ed_r && st_c == ed_c){
@@ -4430,7 +4430,7 @@ const menuButton = {
     getStyleByCell: function(d, r, c){
         let _this = this;
         let style = "";
-        
+
         //交替颜色
         let af_compute = alternateformat.getComputeMap();
         let checksAF = alternateformat.checksAF(r, c, af_compute);
@@ -4478,11 +4478,11 @@ const menuButton = {
             //     if(key == "bl" && value != "0"){
             //         style += "font-weight: bold;";
             //     }
-    
+
             //     if(key == "it" && value != "0"){
             //         style += "font-style:italic;";
             //     }
-    
+
             //     if(key == "ff" && value != "0"){
             //         let f = value;
             //         if(!isNaN(parseInt(value))){
@@ -4490,11 +4490,11 @@ const menuButton = {
             //         }
             //         style += "font-family: " + f + ";";
             //     }
-    
+
             //     if(key == "fs" && value != "10"){
             //         style += "font-size: "+ value + "pt;";
             //     }
-    
+
             //     if((key == "fc" && value != "#000000") || checksAF != null || (checksCF != null && checksCF["textColor"] != null)){
             //         if(checksCF != null && checksCF["textColor"] != null){
             //             style += "color: " + checksCF["textColor"] + ";";
@@ -4503,7 +4503,7 @@ const menuButton = {
             //             style += "color: " + checksAF[0] + ";";
             //         }
             //         else{
-            //             style += "color: " + value + ";";  
+            //             style += "color: " + value + ";";
             //         }
             //     }
             // }
