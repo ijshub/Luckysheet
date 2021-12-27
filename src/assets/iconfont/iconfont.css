@@ -251,6 +251,13 @@
   content: "\e7a9";
 }
 
+.luckysheet-iconfont-euro:before {
+  content: '€';
+  font-size: smaller;
+  position: relative;
+  top: -0.1em;
+}
+
 .luckysheet-iconfont-caidan1:before {
   content: "\e7aa";
 }
