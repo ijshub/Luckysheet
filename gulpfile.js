@@ -219,7 +219,7 @@ async function core() {
 
     await require('esbuild').buildSync({
         format: 'iife',
-        globalName: 'luckysheet',    
+        globalName: 'luckysheet',
         entryPoints: ['src/index.js'],
         bundle: true,
         minify: production,
@@ -229,6 +229,19 @@ async function core() {
         outfile: 'dist/luckysheet.umd.js',
         logLevel: 'error',
       })
+
+    await require('esbuild').buildSync({
+        format: 'esm',
+        globalName: 'luckysheet',
+        entryPoints: ['src/index.js'],
+        bundle: true,
+        minify: production,
+        banner: { js: banner },
+        target: ['es2015'],
+        sourcemap: true,
+        outfile: 'dist/luckysheet.esm.js',
+        logLevel: 'error',
+    })
 }
 
 // According to the build tag in html, package js and css
