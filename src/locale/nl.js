@@ -8847,7 +8847,7 @@ export default {
         undo: 'Undo',
         redo: 'Redo',
         paintFormat: 'Paint format',
-        currencyFormat: 'Formaat als valuta',
+        currencyFormat: 'Format as currency',
         percentageFormat: 'Format as percent',
         numberDecrease: 'Decrease decimal places',
         numberIncrease: 'Increase decimal places',
