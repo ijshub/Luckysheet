@@ -9149,18 +9149,18 @@ export default {
         { "text": 'Percent', "value": "#0.00%", "example": "12.21%" },
         { "text": 'Scientific', "value": "0.00E+00", "example": "1.01E+5" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Accounting', "value": "¥(0.00)", "example": "¥(1200.09)" },
+        { "text": 'Accounting', "value": "€(#,##0.00)", "example": "€(1,200.09)" },
 
 
-        { "text": 'Currency', "value": "¥0.00", "example": "¥1200.09" },
+        { "text": 'Currency', "value": "€ #,##0.00", "example": "€ 1,200.09" },
 
 
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Date', "value": "yyyy-MM-dd", "example": "2017-11-29" },
+        { "text": 'Date', "value": "dd-MM-yyyy", "example": "29-11-2022" },
         { "text": 'Time', "value": "hh:mm AM/PM", "example": "3:00 PM" },
         { "text": 'Time 24H', "value": "hh:mm", "example": "15:00" },
-        { "text": 'Date time', "value": "yyyy-MM-dd hh:mm AM/PM", "example": "2017-11-29 3:00 PM" },
-        { "text": 'Date time 24 H', "value": "yyyy-MM-dd hh:mm", "example": "2017-11-29 15:00" },
+        { "text": 'Date time', "value": "dd-MM-yyyy hh:mm AM/PM", "example": "29-11-2022 3:00 PM" },
+        { "text": 'Date time 24 H', "value": "dd-MM-yyyy hh:mm", "example": "29-11-2022 15:00" },
         { "text": "", "value": "split", "example": "" },
         { "text": 'Custom formats', "value": "fmtOtherSelf", "example": "more" }
     ],
