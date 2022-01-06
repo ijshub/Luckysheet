@@ -8851,7 +8851,7 @@ export default {
         percentageFormat: 'Opmaken als percentage',
         numberDecrease: 'Decimaaltekens verkleinen',
         numberIncrease: 'Decimaaltekens vergroten',
-        moreFormats:'Meer formaten',
+        moreFormats:'Meer opmaak opties',
         font: 'Font',
         fontSize: 'Lettertypegrootte',
         bold: 'Dik (Ctrl+B)',
@@ -9142,27 +9142,27 @@ export default {
         CFAFrancBEAC:'CFA Franc BEAC'
     },
     defaultFmt:[
-        { "text": 'Automatic', "value": "General", "example": "" },
-        { "text": 'Plain text', "value": "@", "example": "" },
+        { "text": 'Automatisch', "value": "General", "example": "" },
+        { "text": 'Platte tekst', "value": "@", "example": "" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Number', "value": "##0.00", "example": "1000.12" },
-        { "text": 'Percent', "value": "#0.00%", "example": "12.21%" },
-        { "text": 'Scientific', "value": "0.00E+00", "example": "1.01E+5" },
+        { "text": 'Nummer', "value": "##0.00", "example": "1000.12" },
+        { "text": 'Procent', "value": "#0.00%", "example": "12.21%" },
+        { "text": 'Wetenschappelijk', "value": "0.00E+00", "example": "1.01E+5" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Accounting', "value": "€(#,##0.00)", "example": "€(1,200.09)" },
+        { "text": 'Boekhouding', "value": "€(#,##0.00)", "example": "€(1,200.09)" },
 
 
-        { "text": 'Currency', "value": "€ #,##0.00", "example": "€ 1,200.09" },
+        { "text": 'Valuta', "value": "€ #,##0.00", "example": "€ 1,200.09" },
 
 
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Date', "value": "dd-MM-yyyy", "example": "29-11-2022" },
-        { "text": 'Time', "value": "hh:mm AM/PM", "example": "3:00 PM" },
-        { "text": 'Time 24H', "value": "hh:mm", "example": "15:00" },
-        { "text": 'Date time', "value": "dd-MM-yyyy hh:mm AM/PM", "example": "29-11-2022 3:00 PM" },
-        { "text": 'Date time 24 H', "value": "dd-MM-yyyy hh:mm", "example": "29-11-2022 15:00" },
+        { "text": 'Datum', "value": "dd-MM-yyyy", "example": "29-11-2022" },
+        { "text": 'Tijd', "value": "hh:mm AM/PM", "example": "3:00 PM" },
+        { "text": 'Tijd 24H', "value": "hh:mm", "example": "15:00" },
+        { "text": 'Datum tijd', "value": "dd-MM-yyyy hh:mm AM/PM", "example": "29-11-2022 3:00 PM" },
+        { "text": 'Datum tijd 24 H', "value": "dd-MM-yyyy hh:mm", "example": "29-11-2022 15:00" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Custom formats', "value": "fmtOtherSelf", "example": "more" }
+        { "text": 'Aangepast opmaken', "value": "fmtOtherSelf", "example": "more" }
     ],
     dateFmtList:[
         {
@@ -9256,16 +9256,16 @@ export default {
         "rotationDown":"Rotate Down"
     },
     freezen:{
-        default:"Freeze",
-        freezenRow:"First Row",
-        freezenColumn:"First Column",
-        freezenRC:"Both",
-        freezenRowRange:"Freezen row range",
-        freezenColumnRange:"Freezen column range",
-        freezenRCRange:"Freezen both range",
-        freezenCancel:"Cancel",
+        default:"Vastzetten",
+        freezenRow:"Eerste Rijd",
+        freezenColumn:"Eerste Kolom",
+        freezenRC:"Beide",
+        freezenRowRange:"Rijbereik vastzetten",
+        freezenColumnRange:"Kolombereik vastzetten",
+        freezenRCRange:"Bereik kolom en rij vastzetten",
+        freezenCancel:"Annuleren",
 
-        noSeletionError:"No Range to be selected",        rangeRCOverErrorTitle: "Freeze reminder",
+        noSeletionError:"Geen bereik om te selecteren",        rangeRCOverErrorTitle: "Freeze reminder",
         rangeRCOverError: "The frozen pane is beyond the visible range, which will lead to abnormal operation. Please reset the frozen area."
     },
     sort:{
