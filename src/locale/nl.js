@@ -10041,7 +10041,7 @@ export default {
         typing:"typen",
     },
     websocket:{
-        success: 'Succes met WebSocket-verbinding,
+        success: 'Succes met WebSocket-verbinding',
         refresh: 'Er is een fout opgetreden in de WebSocket-verbinding, ververs de pagina!',
         wait: 'Er is een fout opgetreden in de WebSocket-verbinding, even geduld!',
         close: 'WebSocket-verbinding gesloten',
