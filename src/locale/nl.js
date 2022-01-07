@@ -58,8 +58,8 @@ export default {
     }, {
         "n": "CEILING",
         "t": 0,
-        "d": "Rondt een getal naar boven af ​​op het dichtstbijzijnde gehele veelvoud van de gespecificeerde significantie `factor`.",
-        "a": "Rondt getal naar boven af ​​op het dichtstbijzijnde veelvoud van een factor.",
+        "d": "Rondt een getal naar boven af op het dichtstbijzijnde gehele veelvoud van de gespecificeerde significantie `factor`.",
+        "a": "Rondt getal naar boven af op het dichtstbijzijnde veelvoud van een factor.",
         "m": [2, 2],
         "p": [{
             "name": "waarde",
@@ -139,7 +139,7 @@ export default {
         "a": "Inverse cosinus hyperbolicus van een getal.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value for which to calculate the inverse hyperbolic cosine. Must be greater than or equal to `1`.",
             "example": "2",
             "require": "m",
@@ -205,12 +205,12 @@ export default {
     }, {
         "n": "COUNTBLANK",
         "t": 1,
-        "d": "Returns the number of empty values in a list of values and ranges.",
-        "a": "Number of empty values.",
+        "d": "Retourneert het aantal lege waarden in een lijst met waarden en bereiken.",
+        "a": "Aantal lege waarden.",
         "m": [1, 1],
         "p": [{
-            "name": "value1",
-            "detail": "The first value or range in which to count the number of blanks.",
+            "name": "waarde1",
+            "detail": "De eerste waarde of het eerste bereik waarin het aantal blanco's moet worden geteld.",
             "example": "A2:C100",
             "require": "m",
             "repeat": "n",
@@ -219,12 +219,12 @@ export default {
     }, {
         "n": "COSH",
         "t": 0,
-        "d": "Returns the hyperbolic cosine of any real number.",
-        "a": "Hyperbolic cosine of any real number.",
+        "d": "Retourneert de cosinus hyperbolicus van een reëel getal.",
+        "a": "Hyperbolische cosinus van elk reëel getal.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
-            "detail": "Any real value to calculate the hyperbolic cosine of.",
+            "name": "waarde",
+            "detail": "Elke reële waarde om de hyperbolische cosinus van te berekenen.",
             "example": "A2",
             "require": "m",
             "repeat": "n",
@@ -233,12 +233,12 @@ export default {
     }, {
         "n": "INT",
         "t": 0,
-        "d": "Rounds a number down to the nearest integer that is less than or equal to it.",
-        "a": "Rounds number down to nearest integer.",
+        "d": "Rondt een getal naar beneden af op het dichtstbijzijnde gehele getal dat kleiner is dan of gelijk is aan het getal.",
+        "a": "Rondt het getal naar beneden af op het dichtstbijzijnde gehele getal.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
-            "detail": "The value to round down to the nearest integer.",
+            "name": "waarde",
+            "detail": "De waarde die naar beneden moet worden afgerond op het dichtstbijzijnde gehele getal.",
             "example": "99.44",
             "require": "m",
             "repeat": "n",
@@ -247,11 +247,11 @@ export default {
     }, {
         "n": "ISEVEN",
         "t": 0,
-        "d": "Checks whether the provided value is even.",
-        "a": "Whether the provided value is even.",
+        "d": "Controleert of de opgegeven waarde even is.",
+        "a": "Of de aangeboden waarde even is.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as even.",
             "example": "4",
             "require": "m",
@@ -261,12 +261,12 @@ export default {
     }, {
         "n": "ISODD",
         "t": 0,
-        "d": "Checks whether the provided value is odd.",
-        "a": "Whether the provided value is odd.",
+        "d": "Controleert of de opgegeven waarde oneven is.",
+        "a": "Of de opgegeven waarde oneven is.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
-            "detail": "The value to be verified as odd.",
+            "name": "waarde",
+            "detail": "De waarde die als oneven moet worden geverifieerd.",
             "example": "4",
             "require": "m",
             "repeat": "n",
@@ -275,19 +275,19 @@ export default {
     }, {
         "n": "LCM",
         "t": 0,
-        "d": "Returns the least common multiple of one or more integers.",
-        "a": "Least common multiple of one or more integers.",
+        "d": "Retourneert het kleinste gemene veelvoud van een of meer gehele getallen.",
+        "a": "Kleinste gemene veelvoud van een of meer gehele getallen.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
-            "detail": "The first value or range whose factors to consider in a calculation to find the least common multiple.",
+            "name": "waarde1",
+            "detail": "De eerste waarde of het eerste bereik waarvan de factoren in een berekening moeten worden meegenomen om het kleinste gemene veelvoud te vinden.",
             "example": "A2:A5",
             "require": "m",
             "repeat": "n",
             "type": "rangeall"
         }, {
-            "name": "value2",
-            "detail": "Additional values or ranges whose factors to consider to find the least common multiple.",
+            "name": "waarde2",
+            "detail": "Aanvullende waarden of bereiken waarvan de factoren moeten worden overwogen om het kleinste gemene veelvoud te vinden.",
             "example": "3",
             "require": "o",
             "repeat": "y",
@@ -296,12 +296,12 @@ export default {
     }, {
         "n": "LN",
         "t": 0,
-        "d": "Returns the logarithm of a number, base e (Euler's number).",
-        "a": "The logarithm of a number, base e (euler's number).",
+        "d": "Retourneert de logaritme van een getal, grondtal e (het getal van Euler).",
+        "a": "De logaritme van een getal, grondtal e (getal van euler).",
         "m": [1, 1],
         "p": [{
-            "name": "value",
-            "detail": "The value for which to calculate the logarithm, base e.",
+            "name": "waarde",
+            "detail": "De waarde waarvoor de logaritme moet worden berekend, grondtal e.",
             "example": "100",
             "require": "m",
             "repeat": "n",
@@ -310,19 +310,19 @@ export default {
     }, {
         "n": "LOG",
         "t": 0,
-        "d": "Returns the logarithm of a number with respect to a base.",
-        "a": "The logarithm of a number with respect to a base.",
+        "d": "Retourneert de logaritme van een getal met betrekking tot een grondtal.",
+        "a": "De logaritme van een getal ten opzichte van een grondtal.",
         "m": [1, 2],
         "p": [{
-            "name": "value",
-            "detail": "The value for which to calculate the logarithm.",
+            "name": "waarde",
+            "detail": "De waarde waarvoor de logaritme moet worden berekend.",
             "example": "128",
             "require": "m",
             "repeat": "n",
             "type": "rangenumber"
         }, {
-            "name": "base",
-            "detail": "The base to use for calculation of the logarithm.",
+            "name": "basis",
+            "detail": "De basis die moet worden gebruikt voor de berekening van de logaritme.",
             "example": "2",
             "require": "o",
             "repeat": "n",
@@ -331,12 +331,12 @@ export default {
     }, {
         "n": "LOG10",
         "t": 0,
-        "d": "Returns the logarithm of a number, base 10.",
-        "a": "The logarithm of a number, base 10.",
+        "d": "Retourneert de logaritme van een getal, grondtal 10.",
+        "a": "De logaritme van een getal, grondtal 10.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
-            "detail": "The value for which to calculate the logarithm, base 10.",
+            "name": "waarde",
+            "detail": "De waarde waarvoor de logaritme moet worden berekend, grondtal 10.",
             "example": "100",
             "require": "m",
             "repeat": "n",
@@ -345,19 +345,19 @@ export default {
     }, {
         "n": "MOD",
         "t": 0,
-        "d": "Returns the result of the modulo operator, the remainder after a division operation.",
-        "a": "Modulo (remainder) operator.",
+        "d": "Retourneert het resultaat van de modulo-operator, de rest na een delingsbewerking.",
+        "a": "Modulo (rest) operator.",
         "m": [2, 2],
         "p": [{
             "name": "dividend",
-            "detail": "The number to be divided to find the remainder.",
+            "detail": "Het getal dat moet worden gedeeld om de rest te vinden.",
             "example": "10",
             "require": "m",
             "repeat": "n",
             "type": "rangenumber"
         }, {
-            "name": "divisor",
-            "detail": "The number to divide by.",
+            "name": "deler",
+            "detail": "Het getal om door te delen.",
             "example": "4",
             "require": "m",
             "repeat": "n",
@@ -366,19 +366,19 @@ export default {
     }, {
         "n": "MROUND",
         "t": 0,
-        "d": "Rounds one number to the nearest integer multiple of another.",
-        "a": "Rounds a number to the nearest integer multiple.",
+        "d": "Rondt een getal af op het dichtstbijzijnde gehele veelvoud van een ander.",
+        "a": "Rondt een getal af op het dichtstbijzijnde gehele veelvoud.",
         "m": [2, 2],
         "p": [{
-            "name": "value",
-            "detail": "The number to round to the nearest integer multiple of another.",
+            "name": "waarde",
+            "detail": "Het getal dat moet worden afgerond op het dichtstbijzijnde gehele veelvoud van een ander.",
             "example": "21",
             "require": "m",
             "repeat": "n",
             "type": "rangenumber"
         }, {
             "name": "factor",
-            "detail": "The number to whose multiples `value` will be rounded.",
+            "detail": "Het getal op wiens veelvouden 'waarde' wordt afgerond.",
             "example": "14",
             "require": "m",
             "repeat": "n",
@@ -387,12 +387,12 @@ export default {
     }, {
         "n": "ODD",
         "t": 0,
-        "d": "Rounds a number up to the nearest odd integer.",
-        "a": "Rounds a number up to the nearest odd integer.",
+        "d": "Rondt een getal naar boven af op het dichtstbijzijnde oneven gehele getal.",
+        "a": "Rondt een getal naar boven af op het dichtstbijzijnde oneven gehele getal.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
-            "detail": "The value to round to the next greatest odd number.",
+            "name": "waarde",
+            "detail": "De waarde die moet worden afgerond op het eerstvolgende grootste oneven getal.",
             "example": "2",
             "require": "m",
             "repeat": "n",
@@ -401,19 +401,19 @@ export default {
     }, {
         "n": "SUMSQ",
         "t": 0,
-        "d": "Returns the sum of the squares of a series of numbers and/or cells.",
-        "a": "Sum of squares.",
+        "d": "Retourneert de som van de kwadraten van een reeks getallen en/of cellen.",
+        "a": "Som van de kwadraten.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
-            "detail": "The first number or range whose squares to add together.",
+            "name": "waarde1",
+            "detail": "Het eerste getal of bereik waarvan de vierkanten bij elkaar moeten worden opgeteld.",
             "example": "A2:A100",
             "require": "m",
             "repeat": "n",
             "type": "rangeall"
         }, {
-            "name": "value2",
-            "detail": "Additional numbers or ranges whose squares to add to the square(s) of `value1`.",
+            "name": "waarde2",
+            "detail": "Extra getallen of bereiken waarvan de kwadraten moeten worden toegevoegd aan de kwadraten van 'waarde1'.",
             "example": "2",
             "require": "o",
             "repeat": "y",
@@ -422,19 +422,19 @@ export default {
     }, {
         "n": "COMBIN",
         "t": 0,
-        "d": "Returns the number of ways to choose some number of objects from a pool of a given size of objects.",
-        "a": "Number of combinations from a set of objects.",
+        "d": "Retourneert het aantal manieren om een aantal objecten te kiezen uit een pool van een bepaalde grootte van objecten.",
+        "a": "Aantal combinaties van een set objecten.",
         "m": [2, 2],
         "p": [{
             "name": "n",
-            "detail": "The size of the pool of objects to choose from.",
+            "detail": "De grootte van de pool met objecten waaruit u kunt kiezen.",
             "example": "4",
             "require": "m",
             "repeat": "n",
             "type": "rangenumber"
         }, {
             "name": "k",
-            "detail": "The number of objects to choose.",
+            "detail": "Het aantal te kiezen objecten.",
             "example": "2",
             "require": "m",
             "repeat": "n",
@@ -443,12 +443,12 @@ export default {
     }, {
         "n": "SUM",
         "t": 0,
-        "d": "Returns the sum of a series of numbers and/or cells.",
-        "a": "Sum of a series of numbers and/or cells.",
+        "d": "Retourneert de som van een reeks getallen en/of cellen.",
+        "a": "Som van een reeks getallen en/of cellen.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
-            "detail": "The first number or range to add together.",
+            "name": "waarde1",
+            "detail": "Het eerste nummer of bereik dat moet worden opgeteld.",
             "example": "A2:A100",
             "require": "m",
             "repeat": "n",
@@ -496,7 +496,7 @@ export default {
         "a": "Inverse sine of a value, in radians.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value for which to calculate the inverse sine. Must be between `-1` and `1`, inclusive.",
             "example": "0",
             "require": "m",
@@ -552,7 +552,7 @@ export default {
         "a": "Counts number of unique values in a range.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider for uniqueness.",
             "example": "A1:C100",
             "require": "m",
@@ -601,7 +601,7 @@ export default {
         "a": "Rounds a number up to the nearest even integer.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to round to the next greatest even number.",
             "example": "3",
             "require": "m",
@@ -629,7 +629,7 @@ export default {
         "a": "Factorial of a number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The number or reference to a number whose factorial will be calculated and returned.",
             "example": "3",
             "require": "m",
@@ -643,7 +643,7 @@ export default {
         "a": "\"double factorial\" of a number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The number or reference to a number whose double factorial will be calculated and returned.",
             "example": "6",
             "require": "m",
@@ -664,7 +664,7 @@ export default {
         "a": "Rounds number down to nearest multiple of a factor.",
         "m": [2, 2],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to round down to the nearest integer multiple of `factor`.",
             "example": "23.25",
             "require": "m",
@@ -685,7 +685,7 @@ export default {
         "a": "Greatest common divisor of one or more integers.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range whose factors to consider in a calculation to find the greatest common divisor.",
             "example": "A2:A5",
             "require": "m",
@@ -727,7 +727,7 @@ export default {
         "a": "Rounds a number according to standard rules.",
         "m": [2, 2],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to round to `places` number of places.",
             "example": "99.44",
             "require": "m",
@@ -748,7 +748,7 @@ export default {
         "a": "Rounds down a number.",
         "m": [2, 2],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to round to `places` number of places, always rounding down.",
             "example": "99.44",
             "require": "m",
@@ -769,7 +769,7 @@ export default {
         "a": "Rounds up a number.",
         "m": [2, 2],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to round to `places` number of places, always rounding up.",
             "example": "99.44",
             "require": "m",
@@ -825,7 +825,7 @@ export default {
         "a": "Sign of a provided number (+/-/0).",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value whose sign will be evaluated.",
             "example": "-42",
             "require": "m",
@@ -853,7 +853,7 @@ export default {
         "a": "Hyperbolic sine of any real number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "Any real value to calculate the hyperbolic sine of.",
             "example": "A2",
             "require": "m",
@@ -867,7 +867,7 @@ export default {
         "a": "Positive square root of a positive number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The number for which to calculate the positive square root.",
             "example": "9",
             "require": "m",
@@ -881,7 +881,7 @@ export default {
         "a": "Square root of the product of pi and number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The number which will be multiplied by Pi and have the product's square root returned",
             "example": "9",
             "require": "m",
@@ -895,7 +895,7 @@ export default {
         "a": "Logarithm of gamma function.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The input to the Gamma function. The natural logarithm of Gamma(`value`) will be returned.",
             "example": "4",
             "require": "m",
@@ -923,7 +923,7 @@ export default {
         "a": "Truncates a number.",
         "m": [1, 2],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be truncated.",
             "example": "3.141592654",
             "require": "m",
@@ -1070,7 +1070,7 @@ export default {
         "a": "The harmonic mean of a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the population.",
             "example": "1",
             "require": "m",
@@ -1154,7 +1154,7 @@ export default {
         "a": "Kurtosis of a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the dataset.",
             "example": "1",
             "require": "m",
@@ -1196,7 +1196,7 @@ export default {
         "a": "Standard deviation of sample (text as 0).",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the sample.",
             "example": "1",
             "require": "m",
@@ -1217,7 +1217,7 @@ export default {
         "a": "Standard deviation of an entire population.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the population.",
             "example": "1",
             "require": "m",
@@ -1238,7 +1238,7 @@ export default {
         "a": "The geometric mean of a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the population.",
             "example": "1",
             "require": "m",
@@ -1259,7 +1259,7 @@ export default {
         "a": "Top rank of a specified value in a dataset.",
         "m": [2, 3],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value whose rank will be determined.",
             "example": "A10",
             "require": "m",
@@ -1287,7 +1287,7 @@ export default {
         "a": "Average rank of a specified value in a dataset.",
         "m": [2, 3],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value whose rank will be determined.",
             "example": "A10",
             "require": "m",
@@ -1322,7 +1322,7 @@ export default {
             "repeat": "n",
             "type": "rangenumber"
         }, {
-            "name": "value",
+            "name": "waarde",
             "detail": "The value whose percentage rank will be determined.",
             "example": "A2",
             "require": "m",
@@ -1350,7 +1350,7 @@ export default {
             "repeat": "n",
             "type": "rangenumber"
         }, {
-            "name": "value",
+            "name": "waarde",
             "detail": "The value whose percentage rank will be determined.",
             "example": " A2",
             "require": "m",
@@ -1399,7 +1399,7 @@ export default {
         "a": "Inverse fisher transformation of a specified value.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value for which to calculate the inverse Fisher transformation.",
             "example": "0.962",
             "require": "m",
@@ -1413,7 +1413,7 @@ export default {
         "a": "Fisher transformation of a specified value.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value for which to calculate the Fisher transformation.",
             "example": "0.962",
             "require": "m",
@@ -1427,7 +1427,7 @@ export default {
         "a": "Most commonly occurring value in a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating mode.",
             "example": "A2:A100",
             "require": "m",
@@ -1483,7 +1483,7 @@ export default {
         "a": "The number of numeric values in dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when counting.",
             "example": "A2:A100",
             "require": "m",
@@ -1504,7 +1504,7 @@ export default {
         "a": "The number of values in a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when counting.",
             "example": "A2:A100",
             "require": "m",
@@ -1525,7 +1525,7 @@ export default {
         "a": "Average magnitude of deviations from mean.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the sample.",
             "example": "1",
             "require": "m",
@@ -1546,7 +1546,7 @@ export default {
         "a": "Numerical average value in a dataset, ignoring text.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the average value.",
             "example": "A2:A100",
             "require": "m",
@@ -1567,7 +1567,7 @@ export default {
         "a": "Numerical average value in a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the average value.",
             "example": "A2:A100",
             "require": "m",
@@ -1742,7 +1742,7 @@ export default {
         "a": "The sum of squares of deviations based on a sample.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the sample.",
             "example": "1",
             "require": "m",
@@ -2092,7 +2092,7 @@ export default {
         "a": "Minimum numeric value in a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the minimum value.",
             "example": "A2:A100",
             "require": "m",
@@ -2113,7 +2113,7 @@ export default {
         "a": "Minimum value in a numeric dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the minimum value.",
             "example": "A2:A100",
             "require": "m",
@@ -2134,7 +2134,7 @@ export default {
         "a": "Median value in a numeric dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the median value.",
             "example": "A2:A100",
             "require": "m",
@@ -2155,7 +2155,7 @@ export default {
         "a": "Maximum numeric value in a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the maximum value.",
             "example": "A2:A100",
             "require": "m",
@@ -2176,7 +2176,7 @@ export default {
         "a": "Maximum value in a numeric dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range to consider when calculating the maximum value.",
             "example": "A2:A100",
             "require": "m",
@@ -2267,7 +2267,7 @@ export default {
             "repeat": "n",
             "type": "range"
         }, {
-            "name": "value",
+            "name": "waarde",
             "detail": "The test statistic to use in the Z-test.",
             "example": "B2",
             "require": "m",
@@ -2624,7 +2624,7 @@ export default {
         "a": "Variance of entire population.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the population.",
             "example": "1",
             "require": "m",
@@ -2645,7 +2645,7 @@ export default {
         "a": "Variance.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the sample.",
             "example": "1",
             "require": "m",
@@ -2666,7 +2666,7 @@ export default {
         "a": "Variance of sample (text as 0).",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the sample.",
             "example": "1",
             "require": "m",
@@ -2687,7 +2687,7 @@ export default {
         "a": "Variance of entire population (text as 0).",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the population.",
             "example": "1",
             "require": "m",
@@ -2729,7 +2729,7 @@ export default {
         "a": "Normalized equivalent of a random variable.",
         "m": [3, 3],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value of the random variable to normalize.",
             "example": "96",
             "require": "m",
@@ -2799,7 +2799,7 @@ export default {
         "a": "Skewness of a dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the dataset.",
             "example": "1",
             "require": "m",
@@ -2820,7 +2820,7 @@ export default {
         "a": "Skewness of a population's dataset.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value or range of the dataset.",
             "example": "1",
             "require": "m",
@@ -5773,7 +5773,7 @@ export default {
         "a": "Sum of a series of complex numbers.",
         "m": [1, 255],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first complex number or range to add together.",
             "example": "\"3+4i\"",
             "require": "m",
@@ -5906,7 +5906,7 @@ export default {
         "a": "Value if it is not an error, otherwise 2nd argument.",
         "m": [2, 2],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to return if `value` itself is not an error.",
             "example": "A1",
             "require": "m",
@@ -5976,7 +5976,7 @@ export default {
         "a": "Not equal.",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value.",
             "example": "A2",
             "require": "m",
@@ -5997,7 +5997,7 @@ export default {
         "a": "Equal.",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first value.",
             "example": "A2",
             "require": "m",
@@ -6018,7 +6018,7 @@ export default {
         "a": "Strictly greater than.",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The value to test as being greater than `value2`.",
             "example": "A2",
             "require": "m",
@@ -6039,7 +6039,7 @@ export default {
         "a": "Greater than or equal to.",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The value to test as being greater than or equal to `value2`.",
             "example": "A2",
             "require": "m",
@@ -6060,7 +6060,7 @@ export default {
         "a": "Less than.",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The value to test as being less than `value2`.",
             "example": "A2",
             "require": "m",
@@ -6081,7 +6081,7 @@ export default {
         "a": "Less than or equal to.",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The value to test as being less than or equal to `value2`.",
             "example": "A2",
             "require": "m",
@@ -6102,7 +6102,7 @@ export default {
         "a": "Sum of two numbers",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The first addend.",
             "example": "A2",
             "require": "m",
@@ -6123,7 +6123,7 @@ export default {
         "a": "Difference of two numbers",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The minuend, or number to be subtracted from.",
             "example": "A2",
             "require": "m",
@@ -6186,7 +6186,7 @@ export default {
         "a": "Concatenation of two values",
         "m": [2, 2],
         "p": [{
-            "name": "value1",
+            "name": "waarde1",
             "detail": "The value to which `value2` will be appended.",
             "example": "\"de\"",
             "require": "m",
@@ -6368,7 +6368,7 @@ export default {
         "a": "String arguments as text.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument to be converted to text.",
             "example": "A2",
             "require": "m",
@@ -6837,7 +6837,7 @@ export default {
         "a": "Unit conversion for numbers.",
         "m": [3, 3],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The numeric value in `start_unit` to convert to `end_unit`.",
             "example": "5.1",
             "require": "m",
@@ -7229,7 +7229,7 @@ export default {
         "a": "Whether the referenced cell is empty.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "Reference to the cell that will be checked for emptiness.",
             "example": "A2",
             "require": "m",
@@ -7243,7 +7243,7 @@ export default {
         "a": "Whether a value is an error other than `#n/a`.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as an error type other than `#N/A`.",
             "example": "A2",
             "require": "m",
@@ -7257,7 +7257,7 @@ export default {
         "a": "Whether a value is an error.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as an error type.",
             "example": "A2",
             "require": "m",
@@ -7271,7 +7271,7 @@ export default {
         "a": "Whether a value is `true` or `false`.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as a logical `TRUE` or `FALSE`.",
             "example": "A2",
             "require": "m",
@@ -7285,7 +7285,7 @@ export default {
         "a": "Whether a value is the error `#n/a`.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be compared with the error value `#N/A`.",
             "example": "A2",
             "require": "m",
@@ -7299,7 +7299,7 @@ export default {
         "a": "Whether a value is non-textual.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be checked.",
             "example": "A2",
             "require": "m",
@@ -7313,7 +7313,7 @@ export default {
         "a": "Whether a value is a number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as a number.",
             "example": "A2",
             "require": "m",
@@ -7327,7 +7327,7 @@ export default {
         "a": "Whether a value is a valid cell reference.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as a cell reference.",
             "example": "A2",
             "require": "m",
@@ -7341,7 +7341,7 @@ export default {
         "a": "Whether a value is text.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value to be verified as text.",
             "example": "A2",
             "require": "m",
@@ -7355,7 +7355,7 @@ export default {
         "a": "Get the type of a value.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The value whose type is to be determined.",
             "example": "C4",
             "require": "m",
@@ -7369,7 +7369,7 @@ export default {
         "a": "Argument provided as a number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument to be converted to a number.",
             "example": "A2",
             "require": "m",
@@ -7383,7 +7383,7 @@ export default {
         "a": "Converts a provided number to a date.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument or reference to a cell to be converted to a date.",
             "example": "25405",
             "require": "m",
@@ -7397,7 +7397,7 @@ export default {
         "a": "Converts any numeric value to a pure number.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument or reference to a cell to be converted to a pure number.",
             "example": "50%",
             "require": "m",
@@ -7411,7 +7411,7 @@ export default {
         "a": "Converts a provided numeric value to a text value.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument or reference to a cell to be converted to text.",
             "example": "24",
             "require": "m",
@@ -7425,7 +7425,7 @@ export default {
         "a": "Converts a provided number to a dollar value.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument or reference to a cell to be converted to a dollar value.",
             "example": "A2",
             "require": "m",
@@ -7439,7 +7439,7 @@ export default {
         "a": "Converts a provided number to a percentage.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "detail": "The argument or reference to a cell to be converted to a percentage.",
             "example": "A2",
             "require": "m",
@@ -8160,7 +8160,7 @@ export default {
         "a": "Whether a value is a date.",
         "m": [1, 1],
         "p": [{
-            "name": "value",
+            "name": "waarde",
             "example": "\"1990-01-01\"",
             "detail": "The value to be verified as a date.",
             "require": "m",
@@ -9417,12 +9417,12 @@ export default {
         "showAll":"Show/Hide All"
     },
     screenshot:{
-        screenshotTipNoSelection:"Please select the scope of the screenshot",
-        screenshotTipTitle:"Warning！",
-        screenshotTipHasMerge:"This operation cannot be performed on merged cells",
-        screenshotTipHasMulti:"This operation cannot be performed on multiple selection regions",
-        screenshotTipSuccess:"Successful",
-        screenshotImageName:"Screenshot",
+        screenshotTipNoSelection:"Selecteer het bereik van de schermafbeelding",
+        screenshotTipTitle:"Waarschuwing！",
+        screenshotTipHasMerge:"Deze bewerking kan niet worden uitgevoerd op samengevoegde cellen",
+        screenshotTipHasMulti:"Deze bewerking kan niet worden uitgevoerd op meerdere selectieregio's",
+        screenshotTipSuccess:"Succesvol",
+        screenshotImageName:"Schermafbeelding",
 
         downLoadClose:"Close",
         downLoadCopy:"Copy to clipboard",
