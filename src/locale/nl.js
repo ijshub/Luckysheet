@@ -9226,12 +9226,12 @@ export default {
         borderSize:'Randstijl',
     },
     merge:{
-        mergeAll:"Merge all",
-        mergeV:"Vertically",
-        mergeH:"Horizontally",
-        mergeCancel:"Unmerge",
-        overlappingError:"Cannot merge overlapping areas",
-        partiallyError:"Cannot perform this operation on partially merged cells",
+        mergeAll:"Alles samenvoegen",
+        mergeV:"Verticaal",
+        mergeH:"Horizontaal",
+        mergeCancel:"Samenvoegen opheffen",
+        overlappingError:"Kan overlappende gebieden niet samenvoegen",
+        partiallyError:"Kan deze bewerking niet uitvoeren op gedeeltelijk samengevoegde cellen",
     },
     align:{
         left:"left",
@@ -9269,9 +9269,9 @@ export default {
         rangeRCOverError: "The frozen pane is beyond the visible range, which will lead to abnormal operation. Please reset the frozen area."
     },
     sort:{
-        "asc":"Ascending ",
-        "desc":"Descending ",
-        "custom":"Custom sort",
+        "asc":"Oplopend ",
+        "desc":"Aflopend ",
+        "custom":"Aangepast sorteren",
 
         "hasTitle":"Data has a header row",
         "sortBy":"Sort by",
@@ -9293,7 +9293,7 @@ export default {
 
     },
     filter:{
-       filter:"create filter",
+       filter:"Filter maken",
 
        sortByAsc:"Sort A-Z",
        sortByDesc:"Sort Z-A",
@@ -9313,7 +9313,7 @@ export default {
        filterValueByTip:"filter By Values",
        filterConform:"Confirm",
        filterCancel:"Cancel",
-       clearFilter:"Clear filter",
+       clearFilter:"Filter opheffen",
 
        conditionNone:"None",
         conditionCellIsNull:"Is empty",
