@@ -57,7 +57,7 @@ export default function mobileinit(){
             if(scrollTop < 0){
                 scrollTop = 0;
             }
-            
+
             $("#luckysheet-scrollbar-y").scrollTop(scrollTop);
 
             luckysheet_touchmove_startPos.vy_y = slideY;
@@ -68,7 +68,7 @@ export default function mobileinit(){
             luckysheet_touchmove_startPos.vy_x = slideX;
 
             luckysheet_touchmove_startPos.scrollLeft = scrollLeft;
-   
+
 
         }
         else if(luckysheet_touchhandle_status){//选区
@@ -76,13 +76,13 @@ export default function mobileinit(){
             let x = mouse[0] + $("#luckysheet-cell-main").scrollLeft();
             let y = mouse[1] + $("#luckysheet-cell-main").scrollTop();
 
-            let row_location = rowLocation(y), 
-                row = row_location[1], 
-                row_pre = row_location[0], 
+            let row_location = rowLocation(y),
+                row = row_location[1],
+                row_pre = row_location[0],
                 row_index = row_location[2];
-            let col_location = colLocation(x), 
-                col = col_location[1], 
-                col_pre = col_location[0], 
+            let col_location = colLocation(x),
+                col = col_location[1],
+                col_pre = col_location[0],
                 col_index = col_location[2];
 
             let last = $.extend(true, {}, Store.luckysheet_select_save[Store.luckysheet_select_save.length - 1]);
@@ -162,7 +162,7 @@ export default function mobileinit(){
             Store.luckysheet_select_save[Store.luckysheet_select_save.length - 1] = last;
 
             selectHightlightShow();
-            
+
             luckysheetFreezen.scrollFreezen();
         }
 
@@ -184,29 +184,29 @@ export default function mobileinit(){
                     if(vy_y<=0){
                         vy_y = 0;
                     }
-         
+
                     if(luckysheet_touchmove_startPos.vy_y>0){
                         luckysheet_touchmove_startPos.scrollTop -= vy_y;
                     }
                     else{
                         luckysheet_touchmove_startPos.scrollTop += vy_y;
                     }
-            
+
                     $("#luckysheet-scrollbar-y").scrollTop(luckysheet_touchmove_startPos.scrollTop);
-            
+
                     if(luckysheet_touchmove_startPos.vy_x>0){
                         luckysheet_touchmove_startPos.scrollLeft -= vy_x;
                     }
                     else{
                         luckysheet_touchmove_startPos.scrollLeft += vy_x;
                     }
-            
+
                     $("#luckysheet-scrollbar-x").scrollLeft(luckysheet_touchmove_startPos.scrollLeft);
-         
+
                     if(vy_x<=0 && vy_y<=0){
                         clearInterval(_scrollTimer);
                     }
-                }, 20); 
+                }, 20);
             }
 
         }
@@ -222,12 +222,13 @@ export default function mobileinit(){
         luckysheet_touchmove_status = false;
         // console.log(1111111111);
         event.stopPropagation();
-    })  
-
-    //禁止微信下拉拖出微信背景
-    document.addEventListener("touchmove", function(event){
-        event.preventDefault();
-    }, {
-        passive: false
     })
+
+    // [ijs] commented as a fix for problem with scrolling on mobile devices after navigating from spreadsheet
+    //禁止微信下拉拖出微信背景
+    // document.addEventListener("touchmove", function(event){
+    //     event.preventDefault();
+    // }, {
+    //     passive: false
+    // })
 }
