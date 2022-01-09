@@ -9234,13 +9234,13 @@ export default {
         partiallyError:"Kan deze bewerking niet uitvoeren op gedeeltelijk samengevoegde cellen",
     },
     align:{
-        left:"left",
-        center:"center",
-        right:"right",
+        left:"Links",
+        center:"Centreren",
+        right:"Rechts",
 
-        top:"Top",
-        middle:"Middle",
-        bottom:"Bottom",
+        top:"Boven",
+        middle:"Midden",
+        bottom:"Onder",
     },
     textWrap:{
         "overflow":"Overflow",
@@ -9410,11 +9410,11 @@ export default {
 
     },
     comment:{
-        "insert":"Insert",
-        "edit":"Edit",
-        "delete":"Delete",
-        "showOne":"Show/Hide",
-        "showAll":"Show/Hide All"
+        "insert":"Invoegen",
+        "edit":"Bewerken",
+        "delete":"Verwijderen",
+        "showOne":"Tonen/Verbergen",
+        "showAll":"Alles tonen/Verbergen"
     },
     screenshot:{
         screenshotTipNoSelection:"Selecteer het bereik van de schermafbeelding",
@@ -9801,8 +9801,8 @@ export default {
         count:"Count",
         max:"Max",
         min:"Min",
-        ifGenerate:"If formula generator",
-        find:"Learn more",
+        ifGenerate:"Als formule generator",
+        find:"Meer",
 
         tipNotBelongToIf:"This cell function does not belong to the if formula!",
         tipSelectCell:"Please select the cell to insert the function",
