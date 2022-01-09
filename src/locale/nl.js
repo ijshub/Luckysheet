@@ -9221,7 +9221,7 @@ export default {
         borderOutside:'Buitenranden',
         borderInside:'Binnenranden',
         borderHorizontal:'Horizontale rand',
-        borderVertical:'Verticale binnenrand',
+        borderVertical:'Verticale binnen..',
         borderColor:'Randkleur',
         borderSize:'Randstijl',
     },
@@ -9261,8 +9261,8 @@ export default {
         freezenColumn:"Eerste Kolom",
         freezenRC:"Beide",
         freezenRowRange:"Rijbereik vastzetten",
-        freezenColumnRange:"Kolombereik \nvastzetten",
-        freezenRCRange:"Bereik kolom en rij \nvastzetten",
+        freezenColumnRange:"Kolombereik vastze..",
+        freezenRCRange:"Bereik kolom en rij v..",
         freezenCancel:"Annuleren",
 
         noSeletionError:"Geen bereik om te selecteren",        rangeRCOverErrorTitle: "Freeze reminder",
@@ -9271,7 +9271,7 @@ export default {
     sort:{
         "asc":"Oplopend ",
         "desc":"Aflopend ",
-        "custom":"Aangepast sorteren",
+        "custom":"Aangepast s..",
 
         "hasTitle":"Data has a header row",
         "sortBy":"Sort by",
