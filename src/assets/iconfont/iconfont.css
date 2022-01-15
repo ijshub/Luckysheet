@@ -252,7 +252,7 @@
 }
 
 .luckysheet-iconfont-euro:before {
-  content: '€';
+  content: '\20AC';
   font-size: smaller;
   position: relative;
   top: -0.1em;
