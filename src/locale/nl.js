@@ -9149,10 +9149,10 @@ export default {
         { "text": 'Procent', "value": "#0.00%", "example": "12.21%" },
         { "text": 'Wetenschappelijk', "value": "0.00E+00", "example": "1.01E+5" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Boekhouding', "value": "€(#.##0,00)", "example": "€(1.200,09)" },
+        { "text": 'Boekhouding', "value": "€(#,##0.00)", "example": "€(1.200,09)" },
 
 
-        { "text": 'Valuta', "value": "€ #.##0,00", "example": "€ 1.200,09" },
+        { "text": 'Valuta', "value": "€ #,##0.00", "example": "€ 1.200,09" },
 
 
         { "text": "", "value": "split", "example": "" },

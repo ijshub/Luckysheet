@@ -263,8 +263,7 @@ const menuButton = {
         //货币格式
         $("#luckysheet-icon-currency").click(function(){
             let d = editor.deepCopyFlowData(Store.flowdata);//取数据
-
-            _this.updateFormat(d, "ct", "€ #.##0,00");
+            _this.updateFormat(d, "ct", "€ #,##0.00");
         });
 
         //百分比

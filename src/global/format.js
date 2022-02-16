@@ -1979,6 +1979,10 @@ export function genarate(value) {//万 单位格式增加！！！
 }
 
 export function update(fmt, v) {
+    // workaround for euro format
+    if (fmt === "€ #,##0.00") {
+        return new Intl.NumberFormat('nl-NL', { style: 'currency', currency: 'EUR' }).format(v);
+    }
     return SSF.format(fmt, v);
 }
 
