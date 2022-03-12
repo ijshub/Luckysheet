@@ -9886,9 +9886,9 @@ export default {
         notLessOne:"The number of rows and columns cannot be less than 1",
         offsetColumnLessZero:"The offset column cannot be negative!",
 
-        pasteMustKeybordAlert:"在表格中进行复制粘贴: Ctrl + C 进行复制, Ctrl + V 进行粘贴, Ctrl + X 进行剪切",
-        pasteMustKeybordAlertHTMLTitle:"在表格中进行复制粘贴",
-        pasteMustKeybordAlertHTML:"<span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + C</span>&nbsp;&nbsp;进行复制<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + V</span>&nbsp;&nbsp;进行粘贴<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + X</span>&nbsp;&nbsp;进行剪切",
+        pasteMustKeybordAlert:"Kopieer en plak in een tabel: Ctrl + C Kopiëren, Ctrl + V Plakken, Ctrl + X Knippen",
+        pasteMustKeybordAlertHTMLTitle:"Kopieer en plak in een tabel",
+        pasteMustKeybordAlertHTML:"<span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + C</span>&nbsp;&nbsp;een kopie maken<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + V</span>&nbsp;&nbsp;plakken<br/><span style='line-height: 1.0;font-size:36px;font-weight: bold;color:#666;'>Ctrl + X</span>&nbsp;&nbsp;knippen",
     },
     pivotTable:{
         title:"Pivot Table",
